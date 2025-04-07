@@ -44,14 +44,21 @@ class _HomeScreenState extends State<HomeScreen> {
                           // border: Border.all(color: Colors.white, width: 2),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: const Center(
-                          child: Text(
-                            "Movie Mart",
-                            style: TextStyle(
-                              fontSize: 24,
-                              fontFamily: 'SplashScreenFont',
-                              color: Colors.white,
-                              fontWeight: FontWeight.w200,
+                        child: Center(
+                          child: ShaderMask(
+                            shaderCallback: (bounds) => const LinearGradient(
+                              colors: [Colors.white, Colors.grey],
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                            ).createShader(bounds),
+                            child: const Text(
+                              "Movie Mart",
+                              style: TextStyle(
+                                fontSize: 24,
+                                fontFamily: 'SplashScreenFont',
+                                color: Colors.white,
+                                fontWeight: FontWeight.w200,
+                              ),
                             ),
                           ),
                         ),
@@ -61,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Padding(
                           padding: const EdgeInsets.only(right: 6),
                           child: Image.asset(
-                            "assets/images/logo-rounded.png",
+                            "assets/images/logo-silver.png",
                             width: size.width * 0.09,
                           ),
                         ),
@@ -274,6 +281,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           color: Colors.white,
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
+                          fontFamily: 'SplashScreenFont',
                         ),
                       ),
                     ),
@@ -389,6 +397,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           color: Colors.white,
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
+                          fontFamily: 'SplashScreenFont',
                         ),
                       ),
                     ),
